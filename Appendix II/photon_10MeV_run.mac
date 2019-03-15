@@ -1,0 +1,18 @@
+# To be run preferably in batch, without graphics:
+# % exampleB4[a,b,c,d] run2.mac
+#
+#/run/numberOfWorkers 4
+/run/initialize
+#
+# Switch particle to 10 MeV neutron
+/gun/particle gamma
+/gun/energy 10 MeV
+#
+#Neutron processes: compt, Rayl, phot (photoelectric), conv (pair production?), photonNuclear (photon nuclear inelastic scattering)
+#Disable processes
+#/process/inactivate photonNuclear
+#/process/inactivate Rayl
+# Print progress
+/run/printProgress 100
+# run 10^4 particles
+/run/beamOn 10000
